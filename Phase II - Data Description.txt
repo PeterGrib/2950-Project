@@ -1,0 +1,44 @@
+﻿As of now, we have not finalized a targeted research question we would like to answer, as the workable dataset we have created still gives us some optionality. The dataset is composed of 4 separate tables, and our ability to execute joins (similar to SQL) on these tables will dictate the direction we go in. 
+        A description of the four tables in our dataset is as follow:
+* Movie_Titles
+   * Attributes:
+      * movieID
+      * Movie Title  
+      * Movie Year 
+      * IMDB Rating 
+      * No. IMDB Votes
+      * Genres applicables 
+   * Observations:
+      * Each corresponds to a unique movie 
+* Movie_Characters
+   * Attributes:
+      * CharacterID
+      * Character Name
+      * movieID
+      * Movie Title
+      * Gender
+      * Position in end-credits
+   * Observations:
+      * Each corresponds to a unique movie character 
+* Movie_Lines
+   * Attributes:
+      * lineID
+      * characterID
+      * movieID
+      * Character name 
+      * Text of the actual line 
+   * Observations:
+      * Each corresponds to an individual line in a movie’s script 
+* Movie_Conversations
+   * Attributes:
+      * CharacterID of first character involved 
+      * CharacterID of second character involved 
+      * movieID of the movie in which the conversation occurred 
+      * List of lines, in order, that compose the  conversation 
+   * Observations:
+      * Each corresponds to an individual conversation in a movie’s script
+
+
+        This dataset was created in order to write a research paper analyzing linguistic patterns in dialogue using movie scripts. This paper was written by two Cornell Computer Science professors, so in an indirect way, the creation of this dataset was funded by the University. The availability of these movie scripts, as well as the number of movies that shared a similar name, may have influenced what movie data was collected. Furthermore, the frequency of which a character in a movie spoke, or a pair of characters exchanged dialogue, may have affected which lines/conversations from certain movies were recorded or omitted. 
+        The four tables we have were originally stored in their own respective txt.file. In order to get the data into the form it is now, we had to read each file and replace the delimiter used (‘+++$+++’) by a comma, and then write these altered lines to a new csv file, one for each table. Then, in order to read the csv file we had to specify a latin-8 encoding and assign column names for each table. For two  of the tables, the columns contained lists for which we had to go through each row and interpret the string representation of the list as an actual list. 
+        The raw data can be found in the zip file that will be included.
